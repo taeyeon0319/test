@@ -4,11 +4,19 @@ on:
   push:
     branches: 
       - main
-    tag:
-      - release.*
+    #tag:
+    #  - release.*
 
 jobs:
   job-gut-deul:
     runs-on: ubuntu-latest
     steps: 
       - run: echo "asdfdsa ${{ github.repository }}"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4 
+        with:
+          node-version: 18
+      - name: "Node설치"
+        run: npm install
+      - name : "NPM 실행"
+        run: node index.mjs
