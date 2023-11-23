@@ -1,0 +1,14 @@
+name: "웹프로그래밍 실습 CI/CD"
+
+on: 
+  push:
+    branches: 
+      - main
+    tag:
+      - release.*
+
+jobs:
+  job-gut-deul:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "asdfdsa ${{ github.repository }}"
